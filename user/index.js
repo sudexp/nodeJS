@@ -1,3 +1,4 @@
+const log = require('../logger')(module)
 const db = require('../db')
 
 function User(name) {
@@ -5,10 +6,10 @@ function User(name) {
 }
 
 User.prototype.hello = function(who) {
-  console.log(`${db.getPhrase('Hello')} ${who.name}`)
+  log(`${db.getPhrase('Hello')} ${who.name}`)
 }
 
-console.log(module)
+// console.log(module)
 
 // module.exports = exports = this
 module.exports = User

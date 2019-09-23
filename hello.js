@@ -1,3 +1,5 @@
+const log = require('./logger')(module)
+
 const db = require('./db')
 db.connect()
 
@@ -8,7 +10,7 @@ const run = () => {
   const mike = new User('Mike')
 
   john.hello(mike)
-  console.log(db.getPhrase("Run successful"))
+  log(db.getPhrase("Run successful"))
 }
 
 
