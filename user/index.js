@@ -10,5 +10,7 @@ User.prototype.hello = function(who) {
 
 console.log(module)
 
-exports.User = User
+// module.exports = exports = this
+module.exports = User
+// exports.User = User
 // global.User = User

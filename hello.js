@@ -1,6 +1,15 @@
-const user = require('./user')
+const User = require('./user')
 
-const john = new user.User('John')
-const mike = new user.User('Mike')
+const run = () => {
+  const john = new User('John')
+  const mike = new User('Mike')
 
-john.hello(mike)
+  john.hello(mike)
+}
+
+
+if (module.parent) {
+  exports.run = run
+} else {
+  run()
+}
