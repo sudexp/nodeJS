@@ -1,3 +1,6 @@
+const db = require('./db')
+db.connect()
+
 const User = require('./user')
 
 const run = () => {
@@ -5,6 +8,7 @@ const run = () => {
   const mike = new User('Mike')
 
   john.hello(mike)
+  console.log(db.getPhrase("Run successful"))
 }
 
 

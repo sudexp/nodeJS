@@ -1,11 +1,11 @@
-const phrases = require('./ru')
+const db = require('../db')
 
 function User(name) {
   this.name = name
 }
 
 User.prototype.hello = function(who) {
-  console.log(`${phrases.Hello} ${who.name}`)
+  console.log(`${db.getPhrase('Hello')} ${who.name}`)
 }
 
 console.log(module)
