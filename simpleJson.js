@@ -4,9 +4,15 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello NodeJS!\n');
+  const obj = {
+    brand: 'Renault',
+    model: 'Grand Scenic',
+    year: 2013,
+    mileage: '120000 km'
+  };
+
+  res.writeHead(200, { 'Content-Type': 'application/json; charset=utf8' });
+  res.end(JSON.stringify(obj));
 });
 
 server.listen(port, hostname, () => {
